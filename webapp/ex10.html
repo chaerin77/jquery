@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+			
+		var test = function(){
+			console.log("testB함수 입니다.");
+		}
+		
+		function test(){//이게 먼저 준비되니까 이게 찍힐줄 알았는데 위에것이 찍힘 근데 애초에 이름을 다르게 지으면 됨
+			console.log("testA함수 입니다.");
+		}
+		
+		console.log(typeof test);
+		
+		test();
+	
+	</script>
+</body>
+</html>

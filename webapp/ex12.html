@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트 예제</h1>
+</body>
+
+<script type="text/javascript">
+
+	var name = "global"; //name변수에 담음
+	
+	function checkscope(){ //기명함수 checkscope를 실행시키면--# {}안의 코드 실행
+		var name = "local"; //임시로 잠깐 생겼다가 없어짐
+		console.log(name);
+	}
+	
+	checkscope(); //--# local
+	console.log(name); //global --두번째 바퀴에서 var name= "global" 이것만 실행하고 function checkscope는 첫바퀴에 정리해놔서 통과함 checkscope의 var name=local은 임시로 생겼다가 없어짐
+	
+	
+	/////////////////////////////////////////////////////////
+	
+	//여기가 더 헷가림
+	
+	var name = "global";//두번째 바퀴에 실제로 메모리에 넣음
+	var name2 = "로컬";
+	
+	function checkscope(){ //첫번째 바퀴 돌때 정리만 해놓음  두번째바퀴에 통과 
+		name = "local";//var를 쓰지 않았기때문에 선언한게 아니라서 맨위에 쓴 name의 값이 global -> local로 바뀐것 
+		name2 = "l";
+	}
+	
+	checkscope();
+	console.log(name); //name의 값 자체가 바뀜
+	console.log(name2);
+	
+	//함수 안에서는 var 를 붙여서 사용하는 것이 좋다
+	
+</script>
+
+</html>
