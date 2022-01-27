@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>자바스크립트 예제</h1>
+</body>
+
+<script type="text/javascript">
+	//데이터들을 하나로 묶을때 - vo로썼던것처럼
+	var guestbookVo = {//no에 1이라는값, name에 string이니까 ""안에데이터넣음
+			no:1, // :
+			name:"황일영", 
+			password:"1234", 
+			content:"첫방문입니다.",
+			showInfo: function(){return 3+4}
+	}; //보통 이렇게 표기 값이 많아지면 보기 어려워서
+	
+	//console.log(guestbookVo);
+	console.log(guestbookVo.no);
+	console.log(guestbookVo.name);
+	console.log(guestbookVo.password);
+	console.log(guestbookVo.content);
+	console.log(guestbookVo.showInfo());//함수 실행
+	
+	guestbookVo.regDate = "2022-01-27";//필드 추가
+	console.log(guestbookVo);
+	
+	console.log("=====================================");
+	
+	//객체 만들고 필드만들어서 값 넣기
+	var personVo = {}
+	console.log(personVo);
+	
+	personVo.no = 1;
+	personVo.name = "유재석";
+	personVo.hp = "010-2222-2222";
+	personVo.company = "02-2222-2222";
+	
+	console.log(personVo);
+	
+	console.log(personVo.name);//아래랑 같은거
+	console.log(personVo["name"]);
+	
+	
+</script>
+</html>

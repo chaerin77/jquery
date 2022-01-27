@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+		<li id="first" class="red">첫번째 아이템입니다.</li>
+		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del">세번째아이템입니다.</li>
+		<li><strong>네번째 아이템입니다.</strong></li>
+		
+	</ul>
+
+</body>
+<script type="text/javascript">
+	/*
+	$("li").on("click", function(){//클릭했을때 li인데 첫번째인지 두번째인지 세번째 li인지 알았으면좋겠어 -> 표시를따로해줘야함 -> this
+		var tag = $(this);//중요
+		var tagId = tag.attr("id"); //tag의 속성값중 id값 꺼내기
+		var tagId = tag.attr("class"); //class값 꺼내기
+		var tagId = tag.text(); //text값 꺼내기
+		console.log(tagId);		
+	});
+	*/
+	
+	$("li").on("click", function(){ //이벤트 잡기
+		var tag = $(this);
+		tag.text("레드");
+		//$(this).html("<strong>레드</strong>");
+	});
+</script>
+
+</html>

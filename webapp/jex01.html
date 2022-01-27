@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js">
+
+</script>
+
+</head>
+<body>
+
+	<div>
+		<button id="btn" type="button">js 테스트</button> <!-- jquery 객체화하기 $() -->
+		<h1 id="display">이름출력영역</h1>
+	</div>
+
+</body>
+
+<script type= "text/javascript">
+	$("#btn").on("click", function(){
+		console.log("버튼클릭");//on이라는 메소드 있는거 사용 이벤트정의 -클릭할때
+		$("#display").html('<font color="red">홍길동</font>')//html이라는 메소드 -괄호안의 문자열로 바꿔치기해줌
+	}); 
+	
+</script>
+
+</html>

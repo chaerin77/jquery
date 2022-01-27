@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul><!-- 원래부터 태그에 있던 값들(첫~네번째)은 클릭시 원하는대로 나오는데 버튼눌러서 추가한것들은 안나옴 해결방법? -->
+		<li id="first" class="red">첫번째 아이템입니다.</li>
+		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del">세번째아이템입니다.</li>
+		<li><strong>네번째 아이템입니다.</strong></li>
+		<!-- click전에 미리 끼워넣어져있었어서 가능한거였는데 버튼을 새로누른것들은 끼워넣어져있던게아니기때문에 안되는중
+		 ul은 항상 존재하고 있을 녀석이니까 이벤트를 부모인 얘한테 연결해봄 - 첫번째든 세번째든 클릭해도 하나의 박스로 생각하는중 디테일하게 구분못함
+		 ul한테 나중에 li라는애가 생길거라고 말을해줘야함 그리고 생긴 li한테 시키는거
+		 이벤트는 ul이 받고 실제일하는건 li-->
+	</ul>
+	
+	<button id="btn" type="button">li태그 추가버튼</button>
+</body>
+
+<script type="text/javascript">
+
+	$("ul").on("click","li",function(){ //ul이 이벤트 갖고있다가 li라는애가 생기면 li에게 function실행하라고 시키는거 니가해
+		//console.log($(this).text());	
+		var $this = $(this);
+		console.log($this.text());
+		$this.text("양");//내가원하는 글자로 바꾸기
+	});
+
+
+	/*
+	//글자를 누르면 콘솔창에 첫번째 아이템입니다. 뜨게끔
+	$("li").on("click", function(){//모든 li태그 이벤트로 잡기
+		var tag = $(this).text(); //this 중요~~ 첫번째li누르면 첫번째입니다 두번쨰li누르면 두번째입니다 뜨게해주는것 클릭한 값을 나오게
+		//var $that = $(this); 똑같음
+		console.log(tag);
+	});
+	*/
+
+
+	//버튼을 클릭하면 3개가 추가되게끔
+	$("#btn").on("click", function(){
+		console.log("클릭"); //버튼을 클릭할 때만 사용할 변수라 굳이 이름을 정해주지않았음 익명함수
+		// li의태그 .append 써서 글자를 뒤에 붙였었는데 지금 하려는건 li줄 뒤로 붙여줄거니까 ul.append로 해주면됨
+		$("ul").append("<li id='5'>다섯번째 아이템입니다.</li>");// 글자로 <li></li> 쳐줘야 li로 알아먹음
+		$("ul").append("<li id='6'>여섯번째 아이템입니다.</li>");
+		$("ul").append("<li id='7'>일곱번째 아이템입니다.</li>");
+	});
+
+</script>
+
+</html>

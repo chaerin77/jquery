@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+
+<title>Insert title here</title>
+</head>
+
+<body>
+	<p id="p1"> abcdefghijklmn </p>
+	<p id="p2"> 학교종이 땡땡땡<br> abcdefg </p>
+</body>
+	
+<script type="text/javascript">
+	//글자를 bold 처리된걸로 바꾸고싶을때 - html이라 태그가 적용됨. 글자를 html로 넣은것
+	$("#p1").html("<strong>가나다라마바사</strong>"); //text("")와 다른점--글자를 바꾼다는건 같지만 text는 태그가 먹지않고 <strong>글자 그대로 받아들임
+
+	var text =$("#p2").html();//읽어올 때 html로 읽어오는거라 태그를 그대로 갖고옴	
+	console.log(text); //  학교종이 땡땡땡<br> abcdefg 
+</script>	
+
+</html>
